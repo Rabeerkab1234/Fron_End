@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgb(6, 6, 51);
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+section {
+    background: url(../../../Downloads/background.jpg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul {
+    text-align: center;
+}
+ul:hover li a {
+    opacity: 0;
+}
+ul li {
+    list-style: none;
+    margin: 14px 0;
+}
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    background: darkblue;
+    padding: 6px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    width: 200px;
+    transition: 1s;
+}
+ ul li a:hover {
+    transform: scale(1.5);
+    background: black;
+    opacity: 1;
+}
+ul li::after {
+    content: attr(data-text);
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0;
+    letter-spacing: 50px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+ul li:hover::after {
+    opacity: 0.5;
+    letter-spacing: 5px;
+}
+ul li::before {
+    content: '';
+    width: 180px;
+    height: 80px;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 80px orangered;
+    opacity: 0;
+    transition: 0.5s;
+}
+ul li:hover::before {
+    opacity: 0.5;
+    width: 80px;
+
+}
