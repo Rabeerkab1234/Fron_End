@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #dfe6e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.calendar {
+    width: 250px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7),
+        0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 0, 0, 0.3),
+        inset 0 0 3px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(0, 0, 0, 0.5),
+        inset 0 -5px 1px rgba(0, 0, 0, 0.2),
+        inset 0 -5px 5px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.calendar .month {
+    width: 100%;
+    background: #008184;
+    letter-spacing: 3px;
+    padding: 15px 0;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 0 rgba(255, 255, 255, 0.25),
+        3px 3px 3px rgba(255, 255, 255, 0.25),
+        10px 10px 20px rgba(255, 255, 255, 0.5);
+    transition: background 0.4s;
+}
+
+.calendar .month:hover {
+    background: #111;
+}
+
+.calendar .day {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #008184;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 0 rgba(255, 255, 255, 0.25),
+        3px 3px 3px rgba(255, 255, 255, 0.25);
+}
+
+.calendar .date {
+    font-size: 100px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 0 rgba(255, 255, 255, 0.25),
+        3px 3px 3px rgba(255, 255, 255, 0.25);
+    -webkit-text-stroke: 4px #008184;
+    margin: 10px 0;
+}
+
+.calendar .year {
+    background: #008184;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.5),
+        1px 1px 0 rgba(255, 255, 255, 0.25),
+        3px 3px 3px rgba(255, 255, 255, 0.25);
+    transition: background 0.4s, color 0.4s;
+}
+
+.calendar .year:hover {
+    background: #111;
+    color: #fff;
+}
