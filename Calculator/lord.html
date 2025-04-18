@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/lord.css">
+    <title>CALCULATOR</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" id="display" readonly>
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="clearDisplay()" class="operator" title="Clear">
+                    <input type="button" value="DE" onclick="deleteLast()" class="operator" title="Delete">
+                    <input type="button" value="." onclick="appendToDisplay('.')" class="operator"
+                        title="Decimal Point">
+                    <input type="button" value="/" onclick="appendToDisplay('/')" class="operator" title="Divide">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="appendToDisplay('7')" title="7">
+                    <input type="button" value="8" onclick="appendToDisplay('8')" title="8">
+                    <input type="button" value="9" onclick="appendToDisplay('9')" title="9">
+                    <input type="button" value="*" onclick="appendToDisplay('*')" class="operator" title="Multiply">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="appendToDisplay('4')" title="4">
+                    <input type="button" value="5" onclick="appendToDisplay('5')" title="5">
+                    <input type="button" value="6" onclick="appendToDisplay('6')" title="6">
+                    <input type="button" value="-" onclick="appendToDisplay('-')" class="operator" title="Subtract">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="appendToDisplay('1')" title="1">
+                    <input type="button" value="2" onclick="appendToDisplay('2')" title="2">
+                    <input type="button" value="3" onclick="appendToDisplay('3')" title="3">
+                    <input type="button" value="+" onclick="appendToDisplay('+')" class="operator" title="Add">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="appendToDisplay('00')" title="Double Zero">
+                    <input type="button" value="0" onclick="appendToDisplay('0')" title="Zero">
+                    <input type="button" value="=" onclick="calculateResult()" class="equal operator" title="Calculate">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to append values to the display
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        // Function to clear the display
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        // Function to delete the last character
+        function deleteLast() {
+            let display = document.getElementById('display');
+            display.value = display.value.toString().slice(0, -1);
+        }
+
+        // Function to calculate the result
+        function calculateResult() {
+            let display = document.getElementById('display');
+            try {
+                // Use a safer evaluation method instead of eval()
+                display.value = new Function('return ' + display.value)();
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+
+</html>
