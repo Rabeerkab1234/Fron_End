@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #1e3c72, #2a5290);
+    animation: gradient 8s ease infinite;
+    background-size: 400% 400%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.bourd {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 10px;
+    margin-bottom: 20px;
+    transform: scale(1);
+    animation: scaleBourd 3s ease infinite;
+}
+@keyframes scaleBourd {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #ddd;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    transition: transfform 0.3s ease background-color 0.3s ease;
+}
+.cell:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: rotate(10deg) scale(1.1);
+}
+.cell.x {
+    color: #d32f2f;
+}
+.cell.o {
+    color: #1976d2;
+}
+.message {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0);
+}
+.reset-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007dff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s easem, transform 0.3s ease;
+}
+.reset-button:hover {
+    background-color: #007dff;
+    transform: scale(1.1);
+}
