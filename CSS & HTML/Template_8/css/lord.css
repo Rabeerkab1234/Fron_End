@@ -1,0 +1,99 @@
+/* Reset and Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in element dimensions */
+}
+
+body {
+    font-family: sans-serif;
+    background-color: black;
+    color: white; /* Set default text color */
+}
+
+/* Form Container */
+.box {
+    position: absolute;
+    width: 300px;
+    padding: 40px; /* Reduced padding for better proportions */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #171717;
+    text-align: center;
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+/* Heading */
+.box h1 {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Add spacing below the heading */
+}
+
+/* Input Fields */
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #1338be;
+    padding: 15px 10px;
+    width: 100%; /* Full width */
+    outline: none;
+    color: white;
+    border-radius: 30px;
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    border-color: #00ff88; /* Change border color on focus */
+}
+
+/* Submit Button */
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid white;
+    padding: 15px 45px;
+    outline: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer; /* Indicate clickable element */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.box input[type="submit"]:hover {
+    background-color: white;
+    color: #171717; /* Invert colors on hover */
+}
+
+.box input[type="submit"]:active {
+    transform: scale(0.95); /* Add a slight press effect */
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .box {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .box h1 {
+        font-size: 24px; /* Reduce heading size */
+    }
+
+    .box input[type="text"],
+    .box input[type="password"],
+    .box input[type="submit"] {
+        padding: 10px; /* Reduce padding for inputs */
+    }
+}
