@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rabee Rkab - Portfolio</title>
+  <!-- Box Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabee Rkab - Portfolio</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  
+  <body>
+    <!-- ========== HEADER SECTION ========== -->
+    <header class="header">
+      <!-- Logo with subtle hover effect -->
+      <a href="#home" class="logo" aria-label="Home">
+        Rabee<span class="logo__highlight">Rkab</span>
+      </a>
+  
+      <!-- Mobile Navigation Toggle -->
+      <div class="header__toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+  
+      <!-- Main Navigation -->
+      <nav class="navigation" id="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#home" class="navigation__link active" aria-current="page">Home</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#about" class="navigation__link">About</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#services" class="navigation__link">Services</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#projects" class="navigation__link">Projects</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#contact" class="navigation__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- Contact Button with Ripple Effect -->
+      <button class="header__button gradient-button" aria-label="Contact me">
+        <span class="gradient-button__text">Contact Me</span>
+        <span class="gradient-button__ripple"></span>
+      </button>
+    </header>
+  
+    <style>
+      /* ========== CSS VARIABLES ========== */
+      :root {
+        /* Colors */
+        --color-primary: #4e54c8;
+        --color-primary-light: #8f94fb;
+        --color-text: #2d3436;
+        --color-text-light: #636e72;
+        --color-white: #ffffff;
+        --color-bg: #f8f9fa;
+  
+        /* Shadows */
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+        /* Transitions */
+        --transition-fast: all 0.2s ease;
+        --transition-normal: all 0.3s ease;
+        --transition-slow: all 0.5s ease;
+  
+        /* Border radius */
+        --radius-sm: 0.4rem;
+        --radius-md: 0.8rem;
+        --radius-lg: 1.2rem;
+      }
+  
+      /* ========== BASE STYLES ========== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+      }
+  
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--color-text);
+        background-color: var(--color-bg);
+      }
+  
+      /* ========== HEADER STYLES ========== */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem 9%;
+        background-color: var(--color-bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-normal);
+      }
+  
+      .header.sticky {
+        padding: 1.5rem 9%;
+        box-shadow: var(--shadow-md);
+        backdrop-filter: blur(10px);
+        background-color: rgba(248, 249, 250, 0.9);
+      }
+  
+      /* Logo Styles */
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-text);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: var(--transition-fast);
+      }
+  
+      .logo:hover {
+        transform: translateY(-2px);
+      }
+  
+      .logo__highlight {
+        color: var(--color-primary);
+        position: relative;
+      }
+  
+      .logo__highlight::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+  
+      .logo:hover .logo__highlight::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+  
+      /* Mobile Toggle Button */
+      .header__toggle {
+        display: none;
+        font-size: 3.2rem;
+        color: var(--color-text);
+        cursor: pointer;
+        transition: var(--transition-fast);
+        z-index: 1001;
+      }
+  
+      .header__toggle:hover {
+        color: var(--color-primary);
+        transform: scale(1.1);
+      }
+  
+      /* Navigation Styles */
+      .navigation {
+        display: flex;
+        align-items: center;
+      }
+  
+      .navigation__list {
+        display: flex;
+        list-style: none;
+        gap: 3.5rem;
+      }
+  
+      .navigation__link {
+        position: relative;
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: var(--transition-fast);
+        padding: 0.5rem 0;
+      }
+  
+      .navigation__link:hover,
+      .navigation__link.active {
+        color: var(--color-primary);
+      }
+  
+      .navigation__link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+        transition: var(--transition-normal);
+      }
+  
+      .navigation__link:hover::after,
+      .navigation__link.active::after {
+        width: 100%;
+      }
+  
+      /* Gradient Button Styles */
+      .gradient-button {
+        position: relative;
+        padding: 1.2rem 2.8rem;
+        background: linear-gradient(45deg, var(--color-primary), var(--color-primary-light));
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--color-white);
+        cursor: pointer;
+        overflow: hidden;
+        transition: var(--transition-normal);
+        box-shadow: var(--shadow-sm);
+      }
+  
+      .gradient-button:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+  
+      .gradient-button:active {
+        transform: translateY(-1px);
+      }
+  
+      .gradient-button__ripple {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+      }
+  
+      @keyframes ripple {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+  
+      /* ========== RESPONSIVE STYLES ========== */
+      @media (max-width: 992px) {
+        .header {
+          padding: 2rem 5%;
+        }
+  
+        .navigation__list {
+          gap: 2.5rem;
+        }
+      }
+  
+      @media (max-width: 768px) {
+        .header__toggle {
+          display: block;
+        }
+  
+        .navigation {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 320px;
+          height: 100vh;
+          background-color: var(--color-bg);
+          flex-direction: column;
+          justify-content: center;
+          transition: var(--transition-slow);
+          box-shadow: 2rem 0 5rem rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+        }
+  
+        .navigation.active {
+          left: 0;
+        }
+  
+        .navigation__list {
+          flex-direction: column;
+          align-items: center;
+          gap: 4rem;
+        }
+  
+        .navigation__link {
+          font-size: 2rem;
+        }
+  
+        .gradient-button {
+          display: none;
+        }
+      }
+  
+      @media (max-width: 480px) {
+        .header {
+          padding: 1.5rem 3%;
+        }
+  
+        .logo {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  
+    <script>
+      // ========== MAIN SCRIPTS ==========
+      document.addEventListener('DOMContentLoaded', function () {
+        // DOM Elements
+        const menuToggle = document.getElementById('menu-toggle');
+        const navigation = document.getElementById('navigation');
+        const navLinks = document.querySelectorAll('.navigation__link');
+        const header = document.querySelector('.header');
+        const gradientButtons = document.querySelectorAll('.gradient-button');
+
+        // ===== MOBILE MENU TOGGLE =====
+        menuToggle.addEventListener('click', function () {
+          // Toggle navigation menu
+          navigation.classList.toggle('active');
+
+          // Update aria-expanded attribute
+          const isExpanded = navigation.classList.contains('active');
+          this.setAttribute('aria-expanded', isExpanded);
+
+          // Toggle menu icon
+          const icon = this.querySelector('i');
+          icon.classList.toggle('bx-menu');
+          icon.classList.toggle('bx-x');
+
+          // Toggle body scroll when menu is open
+          document.body.style.overflow = isExpanded ? 'hidden' : '';
+        });
+
+        // ===== CLOSE MENU WHEN CLICKING LINKS =====
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (navigation.classList.contains('active')) {
+              navigation.classList.remove('active');
+              menuToggle.setAttribute('aria-expanded', 'false');
+              document.querySelector('#menu-toggle i').classList.replace('bx-x', 'bx-menu');
+              document.body.style.overflow = '';
+            }
+          });
+        });
+
+        // ===== STICKY HEADER ON SCROLL =====
+        window.addEventListener('scroll', function () {
+          header.classList.toggle('sticky', window.scrollY > 50);
+        });
+
+        // ===== RIPPLE EFFECT FOR BUTTONS =====
+        gradientButtons.forEach(button => {
+          button.addEventListener('click', function (e) {
+            // Create ripple element
+            const ripple = document.createElement('span');
+            ripple.classList.add('gradient-button__ripple');
+
+            // Position the ripple
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            // Add ripple to button
+            this.appendChild(ripple);
+
+            // Remove ripple after animation completes
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        });
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const headerHeight = header.offsetHeight;
+              const targetPosition = targetElement.offsetTop - headerHeight;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+  </html>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, I'm <span>Rabee</span></h1>
+      <h3 class="typing-text">I'm a <span class="profession">Web Developer</span></h3>
+      <p class="home-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptatum aperiam
+        molestias ea illo reiciendis laborum at in dicta? Perferendis aut in ratione maxime debitis asperiores incidunt
+        illo nemo magnam!</p>
+  
+      <div class="social-icons">
+        <a href="#" aria-label="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <i class="bx bxl-linkedin-square"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="bx bxl-instagram-alt"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i class="bx bxl-twitter"></i>
+        </a>
+      </div>
+  
+      <div class="btn-group">
+        <a href="#" class="btn btn-hire">Hire Me</a>
+        <a href="#contact" class="btn btn-contact">Contact</a>
+      </div>
+    </div>
+  
+    <div class="home-img">
+      <img src="image/image.jpg" alt="Portrait of Rabee" loading="lazy">
+    </div>
+    </section>
+
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="image/image.jpg" alt="Rabee's profile picture" loading="lazy">
+      </div>
+    
+      <div class="about-content">
+        <h2 class="heading">About <span>Me</span></h2>
+        <h3 class="subheading">Web Developer & Designer</h3>
+        <p class="about-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Rem eaque vel possimus fugit, ducimus magni inventore cum nisi expedita nobis!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Rem eaque vel possimus fugit, ducimus magni inventore cum nisi expedita nobis!</p>
+    
+        <div class="skills-container">
+          <div class="skill-item">
+            <span class="skill-name">Web Development</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">UI/UX Design</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Graphic Design</span>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="75%"></div>
+            </div>
+          </div>
+        </div>
+    
+        <a href="#" class="btn">Read More</a>
+      </div>
+      </section>
+
+
+      <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+      
+        <div class="services-container">
+          <div class="services-box">
+            <div class="services-info">
+              <i class="bx bxl-figma"></i>
+              <h4>UI/UX Design</h4>
+              <p>
+                Creating intuitive and beautiful digital experiences
+                that users love with modern design principles and
+                user-centered approaches.
+              </p>
+              <a href="#contact" class="service-btn">Learn More</a>
+            </div>
+          </div>
+      
+          <div class="services-box">
+            <div class="services-info">
+              <i class="bx bx-code"></i>
+              <h4>Frontend Development</h4>
+              <p>
+                Building responsive, performant web applications
+                with modern frameworks and best practices for
+                optimal user experience.
+              </p>
+              <a href="#contact" class="service-btn">Learn More</a>
+            </div>
+          </div>
+      
+          <div class="services-box">
+            <div class="services-info">
+              <i class="bx bx-code-curly"></i>
+              <h4>Backend Development</h4>
+              <p>
+                Robust server-side solutions with scalable
+                architecture. Secure APIs and database management
+                for your applications.
+              </p>
+              <a href="#contact" class="service-btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+        </section>
+
+        <section class="projects" id="projects">
+          <h2 class="heading">My <span>Projects</span></h2>
+          <div class="projects-box">
+            <div class="projects-card">
+              <img src="image/project1.png" alt="E-commerce Website">
+              <h3>E-commerce</h3>
+              <p>Full-featured online store with product catalog, cart, and secure checkout system.</p>
+              <div class="btn">View Details</div>
+            </div>
+            <div class="projects-card">
+              <img src="image/project2.png" alt="Task Manager App">
+              <h3>Task Manager</h3>
+              <p>Productivity app with drag-and-drop interface and team collaboration features.</p>
+              <div class="btn">View Details</div>
+            </div>
+            <div class="projects-card">
+              <img src="image/project3.png" alt="Weather Dashboard">
+              <h3>Weather App</h3>
+              <p>Real-time weather forecasts with interactive maps and location detection.</p>
+              <div class="btn">View Details</div>
+            </div>
+            <div class="projects-card">
+              <img src="image/project4.png" alt="Fitness Tracker">
+              <h3>Fitness Tracker</h3>
+              <p>Workout and nutrition tracking with progress visualization charts.</p>
+              <div class="btn">View Details</div>
+            </div>
+            <div class="projects-card">
+              <img src="image/project5.png" alt="Recipe Finder">
+              <h3>Recipe Finder</h3>
+              <p>Search engine for recipes with dietary filters and meal planning.</p>
+              <div class="btn">View Details</div>
+            </div>
+            <div class="projects-card">
+              <img src="image/project6.png" alt="Portfolio Website">
+              <h3>Portfolio</h3>
+              <p>Modern personal portfolio showcasing skills and projects.</p>
+              <div class="btn">View Details</div>
+            </div>
+          </div>
+        </section>
+        
+        <style>
+          :root {
+            --second-color: #f8f9fa;
+            --bg-color: #ffffff;
+            --main-color: #4e54c8;
+            --text-color: #333333;
+          }
+        
+          .projects {
+            background-color: var(--second-color);
+            padding: 8rem 5%;
+          }
+        
+          .heading {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 5rem;
+          }
+        
+          .heading span {
+            color: var(--main-color);
+          }
+        
+          .projects-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            place-items: center;
+            gap: 3rem;
+            row-gap: 5rem;
+          }
+        
+          .projects-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: var(--bg-color);
+            border: 2px solid var(--main-color);
+            border-radius: 3rem;
+            gap: 2rem;
+            padding: 5rem 2rem;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 0 5px var(--main-color);
+            transition: 0.3s ease;
+            width: 100%;
+            max-width: 380px;
+          }
+        
+          .projects-card:hover {
+            box-shadow: 0 0 25px var(--main-color),
+              0 0 50px var(--main-color);
+            transform: scale(1.02);
+          }
+        
+          .projects-card img {
+            max-width: 300px;
+            border-radius: 2rem;
+            object-fit: cover;
+            height: 200px;
+          }
+        
+          .projects-card h3 {
+            font-size: 3rem;
+            color: var(--main-color);
+          }
+        
+          .projects-card p {
+            font-size: 1.6rem;
+            color: var(--text-color);
+            padding: 0 2rem;
+          }
+        
+          .btn {
+            background-color: var(--main-color);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 1rem;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+          }
+        
+          .btn:hover {
+            background-color: #3a3fa0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          }</style>
+
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-content">
+      <h2 class="heading">Get In <span>Touch</span></h2>
+      <p class="contact-description">Have a project in mind or want to collaborate? Feel free to reach out! I'll get back to you as soon as possible.</p>
+      
+      <div class="contact-info">
+        <div class="info-box">
+          <i class='bx bx-envelope'></i>
+          <div class="info-text">
+            <h3>Email</h3>
+            <p>contact@rabeerkab.com</p>
+          </div>
+        </div>
+        
+        <div class="info-box">
+          <i class='bx bx-phone'></i>
+          <div class="info-text">
+            <h3>Phone</h3>
+            <p>+1 (555) 123-4567</p>
+          </div>
+        </div>
+        
+        <div class="info-box">
+          <i class='bx bx-map'></i>
+          <div class="info-text">
+            <h3>Location</h3>
+            <p>San Francisco, CA</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="social-links">
+        <a href="#"><i class='bx bxl-github'></i></a>
+        <a href="#"><i class='bx bxl-linkedin'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+      </div>
+    </div>
+    
+    <form class="contact-form" id="contactForm">
+      <div class="input-group">
+        <div class="input-box">
+          <input type="text" id="name" required>
+          <label for="name">Full Name</label>
+          <span class="error-message" id="name-error"></span>
+        </div>
+        
+        <div class="input-box">
+          <input type="email" id="email" required>
+          <label for="email">Email Address</label>
+          <span class="error-message" id="email-error"></span>
+        </div>
+      </div>
+      
+      <div class="input-box">
+        <input type="text" id="subject" required>
+        <label for="subject">Subject</label>
+        <span class="error-message" id="subject-error"></span>
+      </div>
+      
+      <div class="input-box">
+        <textarea id="message" rows="5" required></textarea>
+        <label for="message">Your Message</label>
+        <span class="error-message" id="message-error"></span>
+      </div>
+      
+      <button type="submit" class="gradient-btn">
+        Send Message <i class='bx bx-send'></i>
+      </button>
+      
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+</section>
+
+<style>
+:root {
+  --primary-color: #4e54c8;
+  --secondary-color: #8f94fb;
+  --text-color: #333;
+  --white-color: #fff;
+  --bg-color: #f8f9fa;
+  --error-color: #ff3860;
+}
+
+.contact {
+  padding: 10rem 9% 8rem;
+  background-color: var(--bg-color);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.heading span {
+  color: var(--primary-color);
+}
+
+.contact-description {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.contact-info {
+  margin: 3rem 0;
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-box i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  padding: 1rem;
+  background: rgba(78, 84, 200, 0.1);
+  border-radius: 50%;
+}
+
+.info-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.info-text p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.social-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: rgba(78, 84, 200, 0.1);
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+  transform: translateY(-0.3rem);
+}
+
+.contact-form {
+  background: var(--white-color);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background: #f5f5f5;
+  border-radius: 0.8rem;
+  border: 0.2rem solid transparent;
+  transition: 0.3s;
+}
+
+.input-box textarea {
+  resize: vertical;
+  min-height: 15rem;
+}
+
+.input-box label {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.6rem;
+  color: #666;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  background: var(--white-color);
+  border-color: var(--primary-color);
+}
+
+.input-box input:focus ~ label,
+.input-box textarea:focus ~ label,
+.input-box input:valid ~ label,
+.input-box textarea:valid ~ label {
+  top: -1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  background: var(--white-color);
+  padding: 0 0.5rem;
+  color: var(--primary-color);
+}
+
+.error-message {
+  display: block;
+  color: var(--error-color);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.input-box.error .error-message {
+  opacity: 1;
+}
+
+.input-box.error input,
+.input-box.error textarea {
+  border-color: var(--error-color);
+}
+
+.form-status {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.gradient-btn {
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--white-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 8rem 5% 6rem;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .heading {
+    font-size: 3.5rem;
+  }
+}
+</style>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Reset previous errors
+    document.querySelectorAll('.input-box').forEach(box => {
+      box.classList.remove('error');
+    });
+
+    // Validate form
+    let isValid = true;
+
+    // Name validation
+    const name = document.getElementById('name');
+    if (name.value.trim() === '') {
+      document.getElementById('name-error').textContent = 'Name is required';
+      name.parentElement.classList.add('error');
+      isValid = false;
+    }
+
+    // Email validation
+    const email = document.getElementById('email');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.value.trim() === '') {
+      document.getElementById('email-error').textContent = 'Email is required';
+      email.parentElement.classList.add('error');
+      isValid = false;
+    } else if (!emailRegex.test(email.value)) {
+      document.getElementById('email-error').textContent = 'Please enter a valid email';
+      email.parentElement.classList.add('error');
+      isValid = false;
+    }
+
+    // Subject validation
+    const subject = document.getElementById('subject');
+    if (subject.value.trim() === '') {
+      document.getElementById('subject-error').textContent = 'Subject is required';
+      subject.parentElement.classList.add('error');
+      isValid = false;
+    }
+
+    // Message validation
+    const message = document.getElementById('message');
+    if (message.value.trim() === '') {
+      document.getElementById('message-error').textContent = 'Message is required';
+      message.parentElement.classList.add('error');
+      isValid = false;
+    }
+
+    if (isValid) {
+      // Simulate form submission (replace with actual AJAX call)
+      const formStatus = document.getElementById('formStatus');
+      formStatus.textContent = 'Your message has been sent successfully!';
+      formStatus.className = 'form-status success';
+
+      // Reset form
+      this.reset();
+
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        formStatus.style.display = 'none';
+      }, 5000);
+    }
+  });
+
+  // Add floating label functionality
+  document.querySelectorAll('.input-box input, .input-box textarea').forEach(input => {
+    input.addEventListener('input', function () {
+      if (this.value.trim() !== '') {
+        this.parentElement.querySelector('label').classList.add('active');
+      } else {
+        this.parentElement.querySelector('label').classList.remove('active');
+      }
+    });
+  });
+</script>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
